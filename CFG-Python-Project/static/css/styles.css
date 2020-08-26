@@ -1,0 +1,57 @@
+/********** Imi - CSS for GameBoy **********/
+/* Basically want a green GameBoy background & black 8-Bit style text with black buttons and white text */
+
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: green;
+  color: Black;
+  font-family: '8BITWONDERNominal'; 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+h3 {
+  background-color: green;
+  color: black;
+}
+
+h4 {
+  background-color: green;
+  color: black;
+}
+
+input[type=submit] {
+  display: block;
+  margin: 0 auto;
+  position: relative; 
+  font-size: 16px;
+  font-family: '8BITWONDERNominal'; 
+  color: white;
+  padding: 1rem 2.5rem; 
+  background:black; 
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.685);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  position: relative; 
+  font-size: 16px;
+  color: white;
+  padding: 1rem 2.5rem;
+  background:black;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.685);
+  text-transform: uppercase;
+  text-align: center;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% include "snippets/head_snippet.html" %}
+	<!--- Link to css page for the style of the webpage -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!--- Link to 8-bit gameboy font -->
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+</head>
+
+<body>
+	{% if no_delay is defined and no_delay is not none %}
+	<div class="no-delay">
+		{% endif %}
+
+		<h3 class="delayed gradual remain"> Welcome, trainer, to the world of </h3>
+		{% include "snippets/pokemon_ascii_snippet.html" %}
+
+		<h4 class="delayed gradual remain">Let's get started!</h4>
+
+		{% if no_delay is defined and no_delay is not none %}
+	</div>
+	{% endif %} {% if user is not defined or user is none %}
+	<form action="/" method="post">
+		<label for="player1name" class="delayed gradual">Your name: </label>
+        <input type="text" id="player1name" name="username" class="delayed"><br>
+        <input type="submit" value="Submit" class="delayed">
+    </form>
+    {% elif user|length > 0 %}
+    <p class="delayed">Continue as <strong>{{ user }}</strong>?</p>
+    <div class="delayed">
+        <a href="/start" class="btn">Yes</a>
+        <a href="/reset?no_delay=True" class="btn">No, change name</a>
+    </div>
+    {% else %}
+    <p class="delayed">You entered an empty username!</p>
+    <a href="/reset?no_delay=True" class="btn delayed">Re-enter</a>
+    {% endif %}
+</body>
+</html>

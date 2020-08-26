@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "snippets/head_snippet.html" %}
+	<!--- Link to css page for the style of the webpage -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!--- Link to 8-bit gameboy font -->
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+</head>
+<body>
+
+    {% include "snippets/reset_snippet.html" %}
+
+    <h3 class="delayed gradual">Get ready to enter the world of</h3>
+    {% include "snippets/pokemon_ascii_snippet.html" %}
+
+    <p class="delayed gradual">You are a Pokemon trainer destined to fight 5 battles.
+        These battles will take place at various locations in Kanto.
+        <br>The last 3 will be against Gym Leaders.
+        Only if the final Gym Leader is defeated do you win the game and become a Pokemon Master.
+        <br><br>Do you accept?</p>
+
+    <div class="delayed">
+        <a href="/accept" class="btn">Yes, I accept</a>
+        <a href="/exit" class="btn">No, not now</a>
+    </div>
+
+</body>
+</html>

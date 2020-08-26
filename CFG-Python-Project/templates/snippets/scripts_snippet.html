@@ -1,0 +1,50 @@
+<script>
+
+let intervalCount = 0;
+let intervalUnit = 50;
+
+function appearCharByChar(elem) {
+    elemText = elem.innerText;
+    elem.innerText = "";
+    elem.style.opacity = 1;
+    for (let charIndex = 0; charIndex < elemText.length; charIndex++) {
+        intervalCount++;
+        let nextChar = document.createElement("span");
+        nextChar.innerText = elemText[charIndex];
+        setTimeout(function() {
+            elem.appendChild(nextChar);
+            nextChar.style.opacity = 1;
+        }, intervalCount * intervalUnit);
+    }
+}
+
+function fadeIn(elem, speed = "normal") {
+    intervalCount += 5;
+    setTimeout(function() {
+        elem.style.opacity = 1;
+    }, intervalCount * intervalUnit);
+    intervalCount += (speed == "slow" ? 25 : 10);
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    let elems = [];
+
+    if (document.querySelector(".no-delay"))
+        elems = Array.prototype.slice.call(document.querySelectorAll(".delayed:not(.remain):not(.last)"));
+    else
+        elems = Array.prototype.slice.call(document.querySelectorAll(".delayed:not(.last)"));
+
+    if (document.querySelector(".delayed.last"))
+        elems.push(document.querySelector(".delayed.last"));
+
+    for (let i = 0; i < elems.length; i++) {
+        if (elems[i].classList.contains("gradual"))
+            appearCharByChar(elems[i]);
+        else if (elems[i].classList.contains("ascii"))
+            fadeIn(elems[i], "slow");
+        else
+            fadeIn(elems[i]);
+    }
+});
+
+</script>

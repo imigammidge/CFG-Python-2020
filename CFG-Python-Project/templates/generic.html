@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This imports all meta tags, styles, scripts etc. plus the app title -->
+  {% include "snippets/head_snippet.html" %}
+  <!--- Link to css page for the style of the webpage -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!--- Link to 8-bit gameboy font -->
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+</head>
+<body>
+
+    <!-- This gives the user the option of resetting their progress and changing their name. -->
+    {% include "snippets/reset_snippet.html" %}
+
+    <h4 class="delayed">In development</h4>
+
+    <h3 class="delayed gradual">Hello {{ user }}, this is a generic title.
+        It has the "delayed gradual" class, which makes the characters appear one at a time.</h3>
+
+    <p class="delayed gradual">This is a generic explanation. Which option will you choose?
+        The options are in a div with the "delayed" class on its own, so they fade in altogether.
+        All the links are broken. The "btn" class makes them look like buttons.</p>
+
+    <div class="delayed">
+        <a href="/some-url-for-option-1" class="btn">Option 1</a>
+        <a href="/some-url-for-option-2" class="btn">Option 2</a>
+        <a href="/some-url-for-option-3" class="btn">Option 3</a>
+    </div>
+
+</body>
+</html>

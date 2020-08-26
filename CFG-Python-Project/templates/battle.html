@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This imports all meta tags, styles, scripts etc. plus the app title -->
+  {% include "snippets/head_snippet.html" %}
+  <!--- Link to css page for the style of the webpage -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!--- Link to 8-bit gameboy font -->
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+</head>
+<body>
+
+    <!-- This gives the user the option of resetting their progress and changing their name. -->
+    {% include "snippets/reset_snippet.html" %}
+
+    <h4 class="delayed">Battle 1 - Pallet Town</h4>
+    <!-- "delayed gradual" class makes the characters appear one at a time -->
+    <h3 class="delayed gradual">Welcome to Pallet Town. This is your hometown and the beginning of your journey. You have been given 6 Pokemon. <br>It's time to set off on your adventure!</h3>
+
+    <p class="delayed gradual">Both you and your hometown Rival, Blue Oak, want to take Route 1 North onto Viridian City. However, only one of you can continue on this journey. <br><br>Your first Battle begins now... Which Pokemon will you choose?</p>
+      <!-- The options are in a div with the "delayed" class on its own, so they fade in altogether. All the links are broken. The "btn" class makes them look like buttons. -->
+        
+    <div class="delayed">
+        <a href="/some-url-for-option-1" class="btn">Pikachu</a>
+        <a href="/some-url-for-option-2" class="btn">Charizard</a>
+        <a href="/some-url-for-option-3" class="btn">Mew</a>
+    </div>
+
+</body>
+</html>

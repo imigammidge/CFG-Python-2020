@@ -1,0 +1,95 @@
+<style>
+
+body {
+    background: #2A2A2A;
+    text-align: center;
+    font-family: menlo;
+    color: black;
+    display: block;
+    padding: 20px;
+}
+
+.delayed {
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.no-delay .delayed, .no-delay .delayed.ascii {
+    opacity: 1;
+}
+
+.delayed.gradual span {
+    transition: all 0.1s;
+    opacity: 0;
+}
+
+.delayed.ascii {
+    transition: all 1.25s;
+    opacity: 0;
+}
+
+h3 {
+    text-align: center;
+    color: black;
+}
+
+pre {
+    font-size: 12px;
+}
+
+h4 {
+    background: #2A2A2A;
+    text-align: center;
+    color: black;
+}
+
+.reset-note {
+    text-align: right;
+    padding-left: 25%;
+    margin-bottom: 40px;
+}
+
+input {
+    border: 0;
+}
+
+input,.btn {
+    display: inline-block;
+    padding: 10px;
+    margin: 3px;
+}
+
+input[type="submit"] {
+    margin-top: 1em;
+}
+
+input[type="submit"], .btn {
+    text-decoration: none;
+    background: #696563;
+    color: white;
+}
+
+input[type="submit"]:hover, .btn:hover {
+    cursor: pointer;
+    background: #4f4c4a;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+a, a:hover{
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    html {
+        font-size: 12px;
+    }
+
+    pre {
+        font-size: 1.5vw;
+    }
+}
+
+</style>

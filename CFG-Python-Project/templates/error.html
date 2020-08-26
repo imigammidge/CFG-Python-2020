@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "snippets/head_snippet.html" %}
+  <!--- Link to css page for the style of the webpage -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!--- Link to 8-bit gameboy font -->
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+</head>
+<body>
+
+    <h3 class="delayed gradual">It appears there has been an error.</h3>
+
+    <h4 class="delayed gradual">More information:</h4>
+
+    <p class="delayed">{{ error }}</p>
+
+    <div class="delayed">
+        <a href="/" class="btn">Home</a>
+    </div>
+
+</body>
+</html>
